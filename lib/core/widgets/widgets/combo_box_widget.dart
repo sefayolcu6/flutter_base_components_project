@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/paddings/app_paddings.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_paddings.dart';
 
-class AppComboBox extends StatefulWidget {
+class CustomComboBox extends StatefulWidget {
   final String? selectedValue;
   final Function(String a) newValue;
   final List<String> options;
   final String? Function(String?)? validator;
-  const AppComboBox(
+  const CustomComboBox(
       {super.key,
       this.selectedValue,
       required this.options,
@@ -14,14 +14,14 @@ class AppComboBox extends StatefulWidget {
       this.validator});
 
   @override
-  State<AppComboBox> createState() => _AppComboBoxState();
+  State<CustomComboBox> createState() => _CustomComboBoxState();
 }
 
-class _AppComboBoxState extends State<AppComboBox> {
+class _CustomComboBoxState extends State<CustomComboBox> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: PaddingConstant.instance.appPaddingAll4,
+      padding: CustomPaddingConstant.instance.appPaddingAll4,
       child: DropdownButtonFormField<String>(
         validator: widget.validator,
         value: widget.selectedValue,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ColorConstant {
-  static final ColorConstant _instance = ColorConstant._init();
-  static ColorConstant get instance => _instance;
-  ColorConstant._init();
+class CustomColorConstant {
+  static final CustomColorConstant _instance = CustomColorConstant._init();
+  static CustomColorConstant get instance => _instance;
+  CustomColorConstant._init();
 
   final Color red = Colors.red;
   final Color green = Colors.green;
@@ -21,6 +21,7 @@ class ColorConstant {
   final Color amber = Colors.amber;
   final Color brown = Colors.brown;
   final Color grey = Colors.grey;
+  final Color ligthGrey = const Color.fromARGB(255, 212, 210, 210);
   final Color blueGrey = Colors.blueGrey;
   final Color lightBlue = Colors.lightBlue;
   final Color lightGreen = Colors.lightGreen;

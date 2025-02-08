@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class PaddingConstant {
-  static final PaddingConstant _instance = PaddingConstant._init();
-  static PaddingConstant get instance => _instance;
+class CustomPaddingConstant {
+  static final CustomPaddingConstant _instance = CustomPaddingConstant._init();
+  static CustomPaddingConstant get instance => _instance;
 
-  PaddingConstant._init();
+  CustomPaddingConstant._init();
 
   final EdgeInsets appPaddingAll2 = const EdgeInsets.all(2);
   final EdgeInsets appPaddingAll4 = const EdgeInsets.all(4);

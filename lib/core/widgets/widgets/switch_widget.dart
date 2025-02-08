@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/colors/colors.dart';
-import 'package:pharma_net/constants/paddings/app_paddings.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_colors.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_paddings.dart';
 
-class AppSwitch extends StatefulWidget {
+class CustomSwitch extends StatefulWidget {
   final bool isActive;
   final bool Function(bool) onChanged;
-  const AppSwitch({
+  const CustomSwitch({
     super.key,
     required this.isActive,
     required this.onChanged,
   });
 
   @override
-  State<AppSwitch> createState() => _AppSwitchState();
+  State<CustomSwitch> createState() => _CustomSwitchState();
 }
 
-class _AppSwitchState extends State<AppSwitch> {
+class _CustomSwitchState extends State<CustomSwitch> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: PaddingConstant.instance.appPaddingAll2,
+      padding: CustomPaddingConstant.instance.appPaddingAll2,
       child: Switch(
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           focusNode: FocusNode(),
-          activeTrackColor: ColorConstant.instance.amber,
+          activeTrackColor: CustomColorConstant.instance.amber,
           value: widget.isActive,
           activeColor: Colors.red,
           onChanged: widget.onChanged),

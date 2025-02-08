@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/widgets/choise_card_widget.dart';
+import 'package:flutter_base_components_project/core/widgets/widgets/choise_card_widget.dart';
 
-class ChoiseCardRadioButtonWidget extends StatefulWidget {
+class CustomChoiseCardRadioButtonWidget extends StatefulWidget {
   final String imageUrl;
   final String subtitle;
   final int radioButtonValue;
   final int groupValue;
-  const ChoiseCardRadioButtonWidget(
+  const CustomChoiseCardRadioButtonWidget(
       {super.key,
       required this.imageUrl,
       required this.subtitle,
@@ -14,19 +14,20 @@ class ChoiseCardRadioButtonWidget extends StatefulWidget {
       required this.groupValue});
 
   @override
-  State<ChoiseCardRadioButtonWidget> createState() =>
-      _ChoiseCardRadioButtonWidgetState();
+  State<CustomChoiseCardRadioButtonWidget> createState() =>
+      _CustomChoiseCardRadioButtonWidgetState();
 }
 
-class _ChoiseCardRadioButtonWidgetState
-    extends State<ChoiseCardRadioButtonWidget> {
+class _CustomChoiseCardRadioButtonWidgetState
+    extends State<CustomChoiseCardRadioButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        AppChoiseCard(
+        CustomChoiseCard(
           imageUrl: widget.imageUrl,
+          
         ),
         Text(widget.subtitle),
         Radio<int>(
