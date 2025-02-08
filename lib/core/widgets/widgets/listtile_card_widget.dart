@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppListTileCard extends StatefulWidget {
+class CustomListTileCard extends StatefulWidget {
   final Color? color;
   final bool? enabled;
   final bool? dense;
@@ -10,7 +10,7 @@ class AppListTileCard extends StatefulWidget {
   final Widget? trailing;
   final Widget? leading;
 
-  const AppListTileCard({
+  const CustomListTileCard({
     Key? key,
     this.color,
     this.enabled,
@@ -23,10 +23,10 @@ class AppListTileCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AppListTileCardState createState() => _AppListTileCardState();
+  _CustomListTileCardState createState() => _CustomListTileCardState();
 }
 
-class _AppListTileCardState extends State<AppListTileCard> {
+class _CustomListTileCardState extends State<CustomListTileCard> {
   @override
   Widget build(BuildContext context) {
     return Card(

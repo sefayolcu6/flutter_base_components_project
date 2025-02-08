@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MultipleChoice extends StatefulWidget {
+class CustomMultipleChoice extends StatefulWidget {
   final Set<int> selection;
   final List<String> options;
   final bool multiSelectionEnabled;
 
-  const MultipleChoice({
+  const CustomMultipleChoice({
     Key? key,
     required this.selection,
     required this.options,
@@ -13,10 +13,10 @@ class MultipleChoice extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<MultipleChoice> createState() => _MultipleChoiceState();
+  State<CustomMultipleChoice> createState() => _CustomMultipleChoiceState();
 }
 
-class _MultipleChoiceState extends State<MultipleChoice> {
+class _CustomMultipleChoiceState extends State<CustomMultipleChoice> {
   @override
   Widget build(BuildContext context) {
     final List<ButtonSegment<int>> segments = List<ButtonSegment<int>>.generate(

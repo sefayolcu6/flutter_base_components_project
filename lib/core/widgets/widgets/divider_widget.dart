@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget appDivider(
+Widget customDivider(
     {Color? color,
     double? endIndent,
     double? indent,
@@ -14,7 +14,8 @@ Widget appDivider(
     thickness: thickness,
   );
 }
-Widget appVerticalDivider(
+
+Widget customVerticalDivider(
     {Color? color,
     double? endIndent,
     double? indent,

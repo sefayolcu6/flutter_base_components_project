@@ -1,8 +1,8 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/colors/colors.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_colors.dart';
 
-Future errorFlushbar(
+Future customErrorFlushbar(
     {required BuildContext context,
     required String title,
     Widget? icon,
@@ -11,12 +11,14 @@ Future errorFlushbar(
   return Flushbar(
     icon: Icon(
       Icons.dangerous_outlined,
-      color: ColorConstant.instance.black,
+      color: CustomColorConstant.instance.black,
     ),
     margin: const EdgeInsets.all(6.0),
     borderRadius: BorderRadius.circular(12),
-    backgroundGradient: LinearGradient(
-        colors: [ColorConstant.instance.red, ColorConstant.instance.black]),
+    backgroundGradient: LinearGradient(colors: [
+      CustomColorConstant.instance.red,
+      CustomColorConstant.instance.black
+    ]),
     boxShadows: const [
       BoxShadow(
         color: Colors.black,
@@ -34,7 +36,7 @@ Future errorFlushbar(
   ).show(context);
 }
 
-Future infoFlushbar(
+Future customInfoFlushbar(
     {required BuildContext context,
     required String title,
     Widget? icon,
@@ -43,7 +45,7 @@ Future infoFlushbar(
   return Flushbar(
     icon: Icon(
       Icons.info,
-      color: ColorConstant.instance.black,
+      color: CustomColorConstant.instance.black,
     ),
     margin: const EdgeInsets.all(6.0),
     borderRadius: BorderRadius.circular(12),
@@ -66,7 +68,7 @@ Future infoFlushbar(
   ).show(context);
 }
 
-Future successFlushbar(
+Future customSuccessFlushbar(
     {required BuildContext context,
     Widget? icon,
     Function()? onPressed,
@@ -75,13 +77,13 @@ Future successFlushbar(
   return Flushbar(
     icon: Icon(
       Icons.info,
-      color: ColorConstant.instance.black,
+      color: CustomColorConstant.instance.black,
     ),
     margin: const EdgeInsets.all(6.0),
     borderRadius: BorderRadius.circular(12),
     backgroundGradient: LinearGradient(colors: [
-      ColorConstant.instance.green,
-      ColorConstant.instance.blue100,
+      CustomColorConstant.instance.green,
+      CustomColorConstant.instance.blue100,
     ]),
     boxShadows: const [
       BoxShadow(
@@ -100,7 +102,7 @@ Future successFlushbar(
   ).show(context);
 }
 
-ScaffoldFeatureController<SnackBar, SnackBarClosedReason> appSnackBar(
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> customSnackBar(
     {required BuildContext context,
     required String message,
     Function()? actionOnpress,
@@ -112,14 +114,14 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> appSnackBar(
           Text(message),
         ],
       ),
-      backgroundColor: ColorConstant.instance.green,
+      backgroundColor: CustomColorConstant.instance.green,
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
       action: SnackBarAction(
           label: actionText ?? "",
-          textColor: ColorConstant.instance.white,
+          textColor: CustomColorConstant.instance.white,
           onPressed: actionOnpress ?? () {}),
       duration: const Duration(seconds: 3),
     ),

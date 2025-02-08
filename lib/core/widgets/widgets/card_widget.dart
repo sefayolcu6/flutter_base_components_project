@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AppCard extends StatefulWidget {
+class CustomListTileCard extends StatefulWidget {
   final Widget icon;
   final Widget title;
   final Widget subtitle;
   final Widget textButtonText;
   final Function()? onPress;
 
-  const AppCard({
+  const CustomListTileCard({
     Key? key,
     required this.icon,
     required this.title,
@@ -17,10 +17,10 @@ class AppCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AppCardState createState() => _AppCardState();
+  _CustomListTileCardState createState() => _CustomListTileCardState();
 }
 
-class _AppCardState extends State<AppCard> {
+class _CustomListTileCardState extends State<CustomListTileCard> {
   @override
   Widget build(BuildContext context) {
     return Card(

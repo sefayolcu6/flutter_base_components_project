@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/colors/colors.dart';
-import 'package:pharma_net/constants/paddings/app_paddings.dart';
-import 'package:pharma_net/constants/utils.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_colors.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_paddings.dart';
+import 'package:flutter_base_components_project/core/helper_components/utils.dart';
 
-class AppElevatedButton extends StatefulWidget {
+class CustomElevatedButton extends StatefulWidget {
   final Widget child;
   final void Function() onPressed;
 
-  const AppElevatedButton({
+  const CustomElevatedButton({
     Key? key,
     required this.child,
     required this.onPressed,
   }) : super(key: key);
 
   @override
-  _AppElevatedButtonState createState() => _AppElevatedButtonState();
+  _CustomElevatedButtonState createState() => _CustomElevatedButtonState();
 }
 
-class _AppElevatedButtonState extends State<AppElevatedButton> {
+class _CustomElevatedButtonState extends State<CustomElevatedButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -27,26 +27,26 @@ class _AppElevatedButtonState extends State<AppElevatedButton> {
   }
 }
 
-class AppTextButtonError extends StatefulWidget {
+class CustomTextButtonError extends StatefulWidget {
   final void Function() onTap;
   final String text;
 
-  const AppTextButtonError({
+  const CustomTextButtonError({
     Key? key,
     required this.onTap,
     required this.text,
   }) : super(key: key);
 
   @override
-  _AppTextButtonErrorState createState() => _AppTextButtonErrorState();
+  _CustomTextButtonErrorState createState() => _CustomTextButtonErrorState();
 }
 
-class _AppTextButtonErrorState extends State<AppTextButtonError> {
+class _CustomTextButtonErrorState extends State<CustomTextButtonError> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        side: BorderSide(color: ColorConstant.instance.red, width: 2),
+        side: BorderSide(color: CustomColorConstant.instance.red, width: 2),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(25))),
       ),
@@ -55,7 +55,7 @@ class _AppTextButtonErrorState extends State<AppTextButtonError> {
         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
         child: Text(widget.text,
             style: TextStyle(
-                color: ColorConstant.instance.red,
+                color: CustomColorConstant.instance.red,
                 fontSize: 14,
                 fontWeight: FontWeight.w500)),
       ),
@@ -63,26 +63,28 @@ class _AppTextButtonErrorState extends State<AppTextButtonError> {
   }
 }
 
-class AppTextButtonSuccess extends StatefulWidget {
+class CustomTextButtonSuccess extends StatefulWidget {
   final void Function() onTap;
   final String text;
 
-  const AppTextButtonSuccess({
+  const CustomTextButtonSuccess({
     Key? key,
     required this.onTap,
     required this.text,
   }) : super(key: key);
 
   @override
-  _AppTextButtonSuccessState createState() => _AppTextButtonSuccessState();
+  _CustomTextButtonSuccessState createState() =>
+      _CustomTextButtonSuccessState();
 }
 
-class _AppTextButtonSuccessState extends State<AppTextButtonSuccess> {
+class _CustomTextButtonSuccessState extends State<CustomTextButtonSuccess> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        side: BorderSide(color: ColorConstant.instance.primaryColor, width: 2),
+        side: BorderSide(
+            color: CustomColorConstant.instance.primaryColor, width: 2),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(25))),
       ),
@@ -91,7 +93,7 @@ class _AppTextButtonSuccessState extends State<AppTextButtonSuccess> {
         padding: const EdgeInsets.only(left: 10.0, right: 10.0),
         child: Text(widget.text,
             style: TextStyle(
-                color: ColorConstant.instance.primaryColor,
+                color: CustomColorConstant.instance.primaryColor,
                 fontSize: 14,
                 fontWeight: FontWeight.w500)),
       ),
@@ -99,37 +101,37 @@ class _AppTextButtonSuccessState extends State<AppTextButtonSuccess> {
   }
 }
 
-class AppGeneralButton extends StatefulWidget {
+class CustomGeneralButton extends StatefulWidget {
   final void Function() onPressed;
   final String text;
 
-  const AppGeneralButton({
+  const CustomGeneralButton({
     Key? key,
     required this.onPressed,
     required this.text,
   }) : super(key: key);
 
   @override
-  _AppGeneralButtonState createState() => _AppGeneralButtonState();
+  _CustomGeneralButtonState createState() => _CustomGeneralButtonState();
 }
 
-class _AppGeneralButtonState extends State<AppGeneralButton> with Utils {
+class _CustomGeneralButtonState extends State<CustomGeneralButton> with Utils {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: PaddingConstant.instance.appPaddingAll2,
+      padding: CustomPaddingConstant.instance.appPaddingAll2,
       child: SizedBox(
         height: screenHeigth(context) * 0.06,
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: ColorConstant.instance.primaryColor,
+            backgroundColor: CustomColorConstant.instance.blueGrey,
           ),
           onPressed: widget.onPressed,
           child: Text(
             widget.text,
             style: TextStyle(
-              color: ColorConstant.instance.white,
+              color: CustomColorConstant.instance.white,
               fontStyle: FontStyle.normal,
               fontSize: 20,
               fontWeight: FontWeight.w600,
@@ -141,28 +143,31 @@ class _AppGeneralButtonState extends State<AppGeneralButton> with Utils {
   }
 }
 
-class AppElevatedButtonIcon extends StatefulWidget {
+class CustomElevatedButtonIcon extends StatefulWidget {
   final void Function() onTap;
   final String label;
+  final IconData icon;
 
-  const AppElevatedButtonIcon({
+  const CustomElevatedButtonIcon({
     Key? key,
     required this.onTap,
     required this.label,
+    required this.icon,
   }) : super(key: key);
 
   @override
-  _AppElevatedButtonIconState createState() => _AppElevatedButtonIconState();
+  _CustomElevatedButtonIconState createState() =>
+      _CustomElevatedButtonIconState();
 }
 
-class _AppElevatedButtonIconState extends State<AppElevatedButtonIcon> {
+class _CustomElevatedButtonIconState extends State<CustomElevatedButtonIcon> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      icon: Icon(Icons.star), // Burada ikon belirlenir
+      icon: Icon(widget.icon), // Burada ikon belirlenir
       label: Text(widget.label), // Burada metin belirlenir
       style: ElevatedButton.styleFrom(
-        side: BorderSide(color: ColorConstant.instance.purple),
+        side: BorderSide(color: CustomColorConstant.instance.purple),
       ),
       onPressed: widget.onTap,
     );

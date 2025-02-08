@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/utils.dart';
-import 'package:pharma_net/constants/widgets/textformfield_widget.dart';
+import 'package:flutter_base_components_project/core/helper_components/utils.dart';
+import 'package:flutter_base_components_project/core/widgets/widgets/textformfield_widget.dart';
 
-class AppDateTimePicker extends StatefulWidget {
+class CustomDateTimePicker extends StatefulWidget {
   final TextEditingController textEditingController;
 
-  const AppDateTimePicker({super.key, required this.textEditingController});
+  const CustomDateTimePicker({super.key, required this.textEditingController});
 
   @override
-  State<AppDateTimePicker> createState() => _AppDateTimePickerState();
+  State<CustomDateTimePicker> createState() => _CustomDateTimePickerState();
 }
 
-class _AppDateTimePickerState extends State<AppDateTimePicker> with Utils {
+class _CustomDateTimePickerState extends State<CustomDateTimePicker>
+    with Utils {
   DateTime? _selectedDate;
 
   Future<void> _selectDate(BuildContext context) async {
@@ -44,7 +45,7 @@ class _AppDateTimePickerState extends State<AppDateTimePicker> with Utils {
 
   @override
   Widget build(BuildContext context) {
-    return AppTextFormField(
+    return CustomTextFormField(
         readOnly: true,
         onTap: () {
           setState(() {

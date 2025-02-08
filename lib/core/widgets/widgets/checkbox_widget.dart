@@ -1,37 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/colors/colors.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_colors.dart';
 
-class AppCheckBox extends StatefulWidget {
+class CustomCheckBox extends StatefulWidget {
   final bool value;
   final ValueChanged<bool?>? onChanged;
 
-  const AppCheckBox({
+  const CustomCheckBox({
     Key? key,
     required this.value,
     required this.onChanged,
   }) : super(key: key);
 
   @override
-  _AppCheckBoxState createState() => _AppCheckBoxState();
+  _CustomCheckBoxState createState() => _CustomCheckBoxState();
 }
 
-class _AppCheckBoxState extends State<AppCheckBox> {
+class _CustomCheckBoxState extends State<CustomCheckBox> {
   @override
   Widget build(BuildContext context) {
     return Checkbox(
-      activeColor: ColorConstant.instance.primaryColor,
+      activeColor: CustomColorConstant.instance.primaryColor,
       value: widget.value,
       onChanged: widget.onChanged,
     );
   }
 }
 
-class AppCheckBoxLabel extends StatefulWidget {
+class CustomCheckBoxLabel extends StatefulWidget {
   final bool value;
   final ValueChanged<bool?>? onChanged;
   final String label;
 
-  const AppCheckBoxLabel({
+  const CustomCheckBoxLabel({
     Key? key,
     required this.value,
     required this.onChanged,
@@ -39,16 +39,16 @@ class AppCheckBoxLabel extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AppCheckBoxLabelState createState() => _AppCheckBoxLabelState();
+  _CustomCheckBoxLabelState createState() => _CustomCheckBoxLabelState();
 }
 
-class _AppCheckBoxLabelState extends State<AppCheckBoxLabel> {
+class _CustomCheckBoxLabelState extends State<CustomCheckBoxLabel> {
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Checkbox(
-          activeColor: ColorConstant.instance.primaryColor,
+          activeColor: CustomColorConstant.instance.primaryColor,
           value: widget.value,
           onChanged: widget.onChanged,
         ),
@@ -58,13 +58,13 @@ class _AppCheckBoxLabelState extends State<AppCheckBoxLabel> {
   }
 }
 
-class AppCheckBoxListTile extends StatefulWidget {
+class CustomCheckBoxListTile extends StatefulWidget {
   final Widget title;
   final Widget subtitle;
   final bool value;
   final ValueChanged<bool?>? onChanged;
 
-  const AppCheckBoxListTile({
+  const CustomCheckBoxListTile({
     Key? key,
     required this.title,
     required this.subtitle,
@@ -73,10 +73,10 @@ class AppCheckBoxListTile extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AppCheckBoxListTileState createState() => _AppCheckBoxListTileState();
+  _CustomCheckBoxListTileState createState() => _CustomCheckBoxListTileState();
 }
 
-class _AppCheckBoxListTileState extends State<AppCheckBoxListTile> {
+class _CustomCheckBoxListTileState extends State<CustomCheckBoxListTile> {
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(

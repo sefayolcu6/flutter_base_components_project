@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/widgets/textformfield_widget.dart';
+import 'package:flutter_base_components_project/core/widgets/widgets/textformfield_widget.dart';
 
-class ShowTimePicker extends StatelessWidget {
+class CustomShowTimePicker extends StatelessWidget {
   final TextEditingController textEditingController;
   final FocusNode focusNode;
-  const ShowTimePicker({
+  const CustomShowTimePicker({
     super.key,
     required this.textEditingController,
     required this.focusNode,
@@ -12,7 +12,7 @@ class ShowTimePicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppTextFormField(
+    return CustomTextFormField(
       label: "Saat",
       controller: textEditingController,
       focusNode: focusNode,

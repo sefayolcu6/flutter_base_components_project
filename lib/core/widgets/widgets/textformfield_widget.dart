@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/paddings/app_paddings.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_paddings.dart';
 
-class AppTextFormField extends StatefulWidget {
+class CustomTextFormField extends StatefulWidget {
   final String label;
   final FocusNode? focusNode;
   final bool? obscureText;
@@ -11,7 +11,7 @@ class AppTextFormField extends StatefulWidget {
   final bool? readOnly;
   final String? Function(String?)? validator;
 
-  const AppTextFormField({
+  const CustomTextFormField({
     Key? key,
     required this.label,
     this.focusNode,
@@ -24,14 +24,14 @@ class AppTextFormField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AppTextFormFieldState createState() => _AppTextFormFieldState();
+  _CustomTextFormFieldState createState() => _CustomTextFormFieldState();
 }
 
-class _AppTextFormFieldState extends State<AppTextFormField> {
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: PaddingConstant.instance.appPaddingAll4,
+      padding: CustomPaddingConstant.instance.appPaddingAll4,
       child: TextFormField(
         validator: widget.validator,
         onTap: widget.onTap,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pharma_net/constants/colors/colors.dart';
-import 'package:pharma_net/constants/widgets/button_widget.dart';
-import 'package:pharma_net/constants/widgets/choise_card_radio_button_widget.dart';
+import 'package:flutter_base_components_project/core/helper_components/custom_colors.dart';
+import 'package:flutter_base_components_project/core/widgets/widgets/button_widget.dart';
 
 class DialogManager {
-  static void appAlertDialog(
+  static void customAlertDialog(
       {required BuildContext context,
       required title,
       required List<Widget> alertBody,
@@ -15,7 +14,7 @@ class DialogManager {
       builder: (BuildContext context) => AlertDialog(
         title: Text(
           title,
-          style: TextStyle(color: ColorConstant.instance.deepOrange),
+          style: TextStyle(color: CustomColorConstant.instance.blueGrey),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -27,12 +26,12 @@ class DialogManager {
               child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              AppTextButtonError(
+              CustomTextButtonError(
                   onTap: () {
                     Navigator.pop(context);
                   },
                   text: "Hayır"),
-              AppTextButtonSuccess(onTap: buttonOntap, text: buttonText),
+              CustomTextButtonSuccess(onTap: buttonOntap, text: buttonText),
             ],
           )),
         ],
@@ -40,34 +39,22 @@ class DialogManager {
     );
   }
 
-  static void appAlertCardDialog({
-    required BuildContext context,
-    List<Widget>? actions,
-  }) {
+  static void customAlertCardDialog(
+      {required BuildContext context,
+      required String title,
+      required Widget actions,
+      required Widget body}) {
     showDialog<String>(
       context: context,
       builder: (BuildContext context) => AlertDialog(
           title: Text(
-            "Lütfen seçim yapınız",
-            style: TextStyle(color: ColorConstant.instance.deepOrange),
+            title,
+            style: TextStyle(color: CustomColorConstant.instance.blueGrey),
           ),
-          content: const Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ChoiseCardRadioButtonWidget(
-                  groupValue: 1,
-                  radioButtonValue: 1,
-                  imageUrl: "assets/pharmacy.png",
-                  subtitle: "Eczacı",
-                ),
-                ChoiseCardRadioButtonWidget(
-                  groupValue: 1,
-                  radioButtonValue: 2,
-                  imageUrl: "assets/shop.png",
-                  subtitle: "Depocu",
-                ),
-              ]),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [body],
+          ),
           actions: [
             GestureDetector(
                 onTap: () {
